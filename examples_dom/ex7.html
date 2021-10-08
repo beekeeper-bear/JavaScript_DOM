@@ -13,6 +13,24 @@
 
   <script>
 
+    let strs = ["Элемент1","Элемент2","Элемент3"];
+
+    document.body.innerHTML = `
+
+        <ol> 
+          <li>${strs[0]}</li>
+          <li>${strs[1]}</li>
+          <li>${strs[2]}</li>
+        </ol>
+
+        <p class="q">  </p>
+    `;
+    
+    let q = document.querySelector('.q'); 
+    q.textContent= document.querySelector('body').innerHTML;
+
+   // console.log(document.querySelector('body').innerHTML); 
+
   </script>
 </body>
 </html>

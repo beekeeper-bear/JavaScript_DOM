@@ -9,7 +9,9 @@
 </head>
 
 <body>
+
   <div class="container"></div>
+
 
   <script>
 
@@ -17,10 +19,15 @@
       elem=document.querySelector(elem);
       let mon = month - 1;
       let d = new Date(year,mon);
-     console.log(d);
+
+      let monstr=['Январь','Февраль','Март','Апрель','Май','Июрь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+
+      //console.log(d);
+
       let table = `
-      <caption>${month}.${year}</caption>
+     
       <table>
+        <caption>${monstr[mon]} &nbsp&nbsp   ${year}</caption>
         <tr>
           <th>пн</th>
           <th>вт</th>
@@ -31,8 +38,6 @@
           <th>вс</th>
        </tr>
        <tr>
-   
-      
       `;
 
      for(let i=0;i<getDay(d);i++){
@@ -57,8 +62,13 @@
 
 
       table+='</tr></table>';
-      elem.innerHTML = table;
+
+      //elem.innerHTML = table;
+
+      return table;
     }
+
+
     function getDay(date){
       let day = date.getDay();
      // console.log(day);
@@ -66,9 +76,45 @@
       return day-1;
     }
 
-    createCalendar('body',2021,10);
+   // createCalendar('.container',2021,11);
+
+    function teble_year(selector) {
+      elem=document.querySelector(selector);
+
+      let table = `
+     
+     <table>
+      
+     `;
+      let y = 0; 
+      for(let i=0;i<4;i++){
+       table+='<tr>';
+
+
+      for(let j=0;j<3;j++){
+
+       y++;
+
+       table+='<td>' + createCalendar('.container',2021,y)+  '</td>';
+
+     }
+
     
+
+     }
+
+     table+='</table>';
+
+     elem.innerHTML = table;
+
+      }
+      
+      teble_year('.container');
+    
+       
   </script>
+
+
 </body>
 
 </html>

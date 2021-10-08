@@ -13,6 +13,27 @@
   </div>
 
   <script>
+    let div = document.querySelector('div');
+    div.className = "alert text block";
+    for(let name of div.classList) {
+      console.log(name);
+    }
+
+    div.style.color = "black";
+    div.style.width = "300px";
+    div.classList.add('ass');
+    div.classList.remove('ass');
+    div.classList.toggle('text');
+    div.classList.toggle('text');
+    div.classList.contains('text'); //проверка еслитакой класс
+    //div.style.backgroundColor = prompt('Цвет','tomato');
+    div.style.display = 'none';
+    //div.style.display = '';
+    setTimeout(()=>div.style.display = "",3000);
+    console.log(div.style.color);
+    let style = getComputedStyle(div)
+    console.log(style.color);
+    
 
   </script>
 </body>

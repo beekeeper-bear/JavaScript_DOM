@@ -11,6 +11,10 @@
   <div data-about-block="Это блок">Блок текста</div>
 
   <script>
+    let elem1=document.querySelector('p');
+   elem1.textContent=elem1.dataset.about; 
+   let elem2 = document.querySelector('div');
+   elem2.textContent=elem2.dataset.aboutBlock
 
   </script>
 </body>
