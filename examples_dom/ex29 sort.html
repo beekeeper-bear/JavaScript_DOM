@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Пример 29 - Дни рождения</title>
+</head>
+
+<body>
+  <div class="items"></div>
+
+  <script src="../js/const.js"></script>
+
+  <script>
+
+
+
+function monthst() {
+ 
+
+let monthmas = [];
+for(let i=0; i<people.length;i++) {
+
+
+  if (people[i]["date"]) { monthmas.push([people[i]["date"]["d"], people[i]["date"]["m"],people[i]["date"]["y"],[`${people[i]["name"]["f"]} ${people[i]["name"]["i"]} ${people[i]["name"]["o"]}`] ] );}
+  else {monthmas.push ([[''],[''],[''],[`${people[i]["name"]["f"]} ${people[i]["name"]["i"]} ${people[i]["name"]["o"]}`]   ]);}
+
+
+
+}
+
+monthmas.sort((a,b) => +a[1]-b[1]);
+
+for(let i=0;i<monthmas.length; i++) {
+
+
+
+let fio = monthmas[i][3];
+
+let date = `${monthmas[i][0]} ${month[+monthmas[i][1]]} ${monthmas[i][2]}`;
+
+let element = document.createElement('p');
+element.innerHTML = fio +" "+ date;
+
+for(let j = 0; j<=12; j++){
+  if(monthmas[i][1] == j) {
+
+  if(document.querySelector(`.items > div .items${j}`) == null){
+     let div = document.createElement('div');
+     div.classList.add('item');
+
+
+     if(monthmas[i][1]==0){
+      div.innerHTML = `
+     <h4> Месяц не известен </h4>
+     <div class="items${j}"><div> 
+     `  }
+     else {  
+     div.innerHTML = `
+     <h4> ${monthIp[j]}</h4>
+     <div class="items${j}"><div> 
+      `}
+     document.querySelector('.items').append(div);
+
+  }
+
+  document.querySelector(`.items > div .items${j}`).append(element);
+
+      }
+     }
+    }
+   }
+    
+
+monthst();
+
+
+
+  </script>
+</body>
+
+</html>

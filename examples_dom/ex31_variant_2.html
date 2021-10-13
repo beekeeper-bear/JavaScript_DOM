@@ -14,7 +14,7 @@
     let words1 = ["Непобедимый", "Визжащий", "Реальный", "Скоростной", "Экцентричный", "Кодовый", "Прожорливый", "Догадливый", "Гениальный", "Разрушительный", "Растерянный", "Торопливый", "Вопрошающий", "Космический", "Динамичный", "Паникующий", "Задумчивый", "Загадочный", "Рекордный", "Непонимающий", "Ультрафиолетовый", "Читающий", "Озорной", "Тормозной", "Волшебный", "Хардовый", "Тычущий", "Внимательный", "Криповый",];
     let words2 = ["Мозг", "Везунчик", "Повелитель", "Красавчик", "Печенька", "Тормоз", "Динозавр", "Индеец", "Экстрасенс", "Цыпленок", "Решала", "Ураган", "Взломщик", "Эрудит", "Сыщик", "Крушитель", "Паникер", "Шутник", "Обуза", "Капитан", "Ботаник", "Гриб", "Зомби", "Котик", "Ведьмак", "Храбрец", "Мастер", "Король",];
 
-function allRandomNames(arr1,arr2) {
+/*function allRandomNames(arr1,arr2) {
 let result = [];
 
 for(let i=0; i<arr1.length; i++) {
@@ -41,13 +41,18 @@ document.body.append(item);
 
 }*/
 
+function words(){
+  
+  return words1[Math.floor(Math.random()*words1.length)]+ ' ' + words2[Math.floor(Math.random()*words2.length)] ;
+
+}
 
 let item = document.createElement('div');
 item.classList.add('menu_link');
 
 setInterval(()=> {
 
-item.textContent = allNames[Math.floor(Math.random()*allNames.length)];
+item.textContent = words();
 document.body.append(item);
 
 },2000);

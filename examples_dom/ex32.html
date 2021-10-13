@@ -12,6 +12,57 @@
 
   <script>
 
+   /* localStorage.setItem('q1',777);
+    localStorage.setItem('q2','Hello World');
+    localStorage.setItem('q3',12345);*/
+
+  console.log(localStorage.getItem('q1'));
+  console.log(localStorage.length);
+
+  for(let i=0; i<localStorage.length; i++) {
+
+   let key = localStorage.key(i);
+
+   console.log(`${key}: ${localStorage.getItem(key)}`); 
+
+
+
+  }
+
+   console.log ('for in');
+   console.log ('for in');
+   console.log ('for in');
+
+   for(let key in localStorage) {
+
+    console.log(key); 
+   }
+  
+   console.log ('for in filtr');
+   console.log ('for in filtr');
+   console.log ('for in filtr');
+ 
+
+
+   for(let key in localStorage) {
+
+    if(!localStorage.hasOwnProperty(key)){ continue;}
+
+    console.log(`${key}: ${localStorage.getItem(key)}`); 
+}
+
+console.log ('for of');
+console.log ('for of');
+console.log ('for of');
+
+for (let key of Object.keys(localStorage)) {
+ 
+  console.log(`${key}: ${localStorage.getItem(key)}`); 
+
+}
+
+
+
   </script>
 </body>
 

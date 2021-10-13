@@ -12,7 +12,56 @@
   <div class="items"></div>
 
   <script src="../js/const.js"></script>
+
   <script>
+
+
+
+
+
+
+
+
+
+    people.forEach(function(item) {
+
+      console.log('hello');
+
+      let fio = `${item["name"]["f"]} ${item["name"]["i"]} ${item["name"]["o"]}`;
+
+      let date = item["date"] ? `${item["date"]["d"]} ${month[+item["date"]["m"]]} ${item["date"]["y"]}` : ``;
+
+      let element = document.createElement('p');
+      element.innerHTML = fio +" "+ date;
+
+      for(let i = 1; i<=12; i++){
+        if(item["date"]["m"] == i) {
+
+        if(document.querySelector(`.items > div .items${i}`) == null){
+           let div = document.createElement('div');
+           div.classList.add('item');
+           div.innerHTML = `
+           <h4> ${monthIp[i]}</h4>
+           <div class="items${i}"><div> 
+           
+           `
+           document.querySelector('.items').append(div);
+
+        }
+
+        document.querySelector(`.items > div .items${i}`).append(element);
+
+        }
+      }
+
+    
+
+     // document.querySelector('.items').append(element); 
+
+    });
+
+
+
 
   </script>
 </body>

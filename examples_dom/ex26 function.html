@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Пример 26 - Таблица номеров</title>
+</head>
+
+<body>
+
+  <table></table>
+  
+  <script src="../js/const.js"></script>
+  <script>
+
+
+function table(phone) {
+  console.log('yess');
+
+ 
+
+
+  for(let key in phone) {
+
+let row = document.createElement('tr');
+row.innerHTML = `<th colspan = "2">${key}</th>`;
+document.querySelector('table').append(row); 
+
+for(let i=0; i<phone[key].length; i++) {
+
+  let row = document.createElement('tr');
+
+  row.innerHTML = `
+  <td>${phone[key][i][0]}</td>
+  <td>${phone[key][i][1]}</td>
+  `
+  document.querySelector('table').append(row); 
+  
+}
+}
+
+}
+
+//table(PHONE_NUMBER);
+
+ let qwe = {
+
+  'qwe':[
+    ['qweqwrwe','345634634']
+  ],
+ 
+
+  'Группа номеров 2': [
+    ['Номер 1', '2485841'],
+ ]
+ }
+
+
+
+table(qwe);
+
+
+
+
+
+
+   
+
+    
+
+  </script>
+</body>
+
+</html>

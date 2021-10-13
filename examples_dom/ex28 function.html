@@ -14,7 +14,10 @@
   <script src="../js/const.js"></script>
   <script>
 
-    for(let i=0;i<people.length; i++) {
+
+
+function createCards(selector, array){
+    for(let i=0;i<array.length; i++) {
 
       console.log('hello');
 
@@ -22,16 +25,19 @@
       item.classList.add('item');
       item.innerHTML = `
 
-      ФИО: ${people[i]['name']['f']} ${people[i]['name']['i']} ${people[i]['name']['o']} <br>
-      Номер телефона: ${people[i]['number'].join(', ')}<br>
-      День рождения:${people[i]['date']['d']} ${month[+people[i]['date']['m']]} ${people[i]['date']['y'] } года<br>
-      Комната:${people[i]['room']}<br>
+      ФИО: ${array[i]['name']['f']} ${array[i]['name']['i']} ${array[i]['name']['o']} <br>
+      Номер телефона: ${array[i]['number'].join(', ')}<br>
+      День рождения:${array[i]['date']['d']} ${month[+array[i]['date']['m']]} ${array[i]['date']['y'] } года<br>
+      Комната:${array[i]['room']}<br>
 
 
       
       `
-      document.querySelector('.items').append(item); 
+      document.querySelector(selector).append(item); 
     }
+  }
+
+  createCards('.items',people);
 
   </script>
 </body>
